@@ -1,6 +1,6 @@
 site:
   name: Melder Magnifique
-  site: 'https://astrowind.vercel.app'
+  site: 'https://www.meldermagnifique.com'
   base: '/'
   trailingSlash: false
   # TODO: Add Google Site Verification ID here!
