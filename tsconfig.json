@@ -1,3 +1,4 @@
+// @ts-nocheck
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {

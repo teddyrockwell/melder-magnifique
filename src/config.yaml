@@ -1,29 +1,30 @@
 site:
-  name: AstroWind
+  name: Melder Magnifique
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
-
+  # TODO: Add Google Site Verification ID here!
   googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Melder Magnifique
+    template: '%s — Melder Magnifique'
+  description: 'A place for magnificence, wisdom, and life.'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Melder Magnifique
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@onwidget'
+    handle: '@mrteddyrockwell'
+    # TODO: Not sure about this one for the site or cardType!
     site: '@onwidget'
     cardType: summary_large_image
 
@@ -65,6 +66,7 @@ apps:
 
 analytics:
   vendors:
+    # TODO: Get Google Analytics id
     googleAnalytics:
       id: null # or "G-XXXXXXXXXX"
 

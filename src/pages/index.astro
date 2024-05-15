@@ -25,78 +25,81 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
+        text: 'Join Newsletter',
         href: 'https://github.com/onwidget/astrowind',
         target: '_blank',
-        icon: 'tabler:download',
+        icon: 'tabler:mail',
       },
       { text: 'Learn more', href: '#features' },
     ]}
     image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
   >
-    <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 4.0</span> + Tailwind CSS
+    <Fragment slot='title'>
+      <span class='hidden xl:inline'>Welcome to</span>
+      <span class='text-accent dark:text-white highlight'>Melder Magnifique</span>:
+      <br />
+      Where your success is our passion.
     </Fragment>
 
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 4.0
-        + Tailwind CSS.</span
+    <Fragment slot='subtitle'>
+      <span class='hidden sm:inline'>
+        <span class='font-semibold'>We</span> are a digital platform, dedicated to highlighting unique perspectives on ideas
+        that may influence others to lead a more positive & enjoyable life.</span
       >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
+      <span class='block mb-1 sm:hidden font-bold text-blue-600'
+        >Melder<br />
+        / ˈmɛl dər / • <em>noun</em><br />1. One who melds.</span
+      >
+      The site is suitable for those interested in varying degrees of self-improvement, so that they can "meld" their lives.
     </Fragment>
   </Hero>
 
   <!-- Note Widget ******************* -->
 
-  <Note />
+  <Note iconName='book' intro='Our philosophy:' phrase='Keep things simple, work hard, & have fun.' />
 
   <!-- Features Widget *************** -->
 
   <Features
-    id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022."
+    id='features'
+    tagline='Melder Magnifique'
+    title='What you get with us'
+    subtitle='One of the most professional and comprehensive digital media platforms that highlight unqiue insights on everyday happenings.'
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
+        title: 'Comprehensive Self-Improvement Resources',
         description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
+          'Access a wide range of resources covering personal growth, self-help techniques, and holistic development.',
+        icon: 'tabler:star',
       },
       {
-        title: 'Ready-to-use Components',
-        description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
+        title: 'Interactive Learning Modules',
+        description: 'Engage with interactive modules designed to facilitate learning, growth, and skill enhancement.',
+        icon: 'tabler:puzzle',
       },
       {
-        title: 'Best Practices',
+        title: 'Expert-Led Workshops',
         description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
+          'Participate in workshops led by industry experts, offering insights, strategies, and practical advice for personal and professional advancement.',
+        icon: 'tabler:users',
       },
       {
-        title: 'Excellent Page Speed',
+        title: 'Community Support and Networking',
         description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
+          'Connect with like-minded individuals, share experiences, and collaborate on mutual goals within a supportive community environment.',
+        icon: 'tabler:network',
       },
       {
-        title: 'Search Engine Optimization (SEO)',
+        title: 'Customizable Learning Paths',
         description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
+          'Create personalized learning paths tailored to your individual needs, interests, and aspirations, enabling focused growth and development.',
+        icon: 'tabler:route',
       },
       {
-        title: 'Open to new ideas and contributions',
+        title: 'Actionable Insights and Feedback',
         description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
+          'Receive actionable insights and feedback from mentors, coaches, and peers, empowering you to track progress and make informed decisions on your journey of self-improvement.',
+        icon: 'tabler:graph',
       },
     ]}
   />
@@ -105,23 +108,23 @@ const metadata = {
 
   <Content
     isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
+    tagline='Inside Melder Magnifique'
+    title='Melder Blueprint: The Triangle of Success'
     items={[
       {
-        title: 'Built on top of Astro 4.0',
+        title: 'Wisdom - (Mind)',
         description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
+          'Dive into a world of knowledge and discovery as we explore the depths of wisdom together. Unleash the power of your mind with insightful content that stimulates thought, sparks creativity, and expands your intellectual horizons. From practical tips to profound insights, embark on a journey of personal growth and enlightenment.',
       },
       {
-        title: 'Styled using Tailwind CSS',
+        title: 'Health - (Body)',
         description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
+          'Nourish your body, mind, and soul with transformative insights into holistic health and wellness. Discover the secrets to vitality and longevity as we delve into topics ranging from nutrition and fitness to mindfulness and self-care. Elevate your well-being and cultivate a vibrant lifestyle that fuels your body with energy and vitality.',
       },
       {
-        title: 'Cross-browser compatibility',
+        title: 'Wealth - (Spirit)',
         description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
+          'Unlock the path to abundance and prosperity as we delve into the realms of spiritual wealth and fulfillment. Explore timeless principles and practices that empower you to live a life of purpose, passion, and meaning. From cultivating gratitude to fostering inner peace, embark on a journey of self-discovery and unlock the infinite potential within you.',
       },
     ]}
     image={{
@@ -129,13 +132,13 @@ const metadata = {
       alt: 'Colorful Image',
     }}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
+    <Fragment slot='content'>
+      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2'>Built on timeless principles</h3>
+      Approach life with a holistc view, geared for sustainable success.
     </Fragment>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
     </Fragment>
   </Content>
 
@@ -169,10 +172,10 @@ const metadata = {
       alt: 'Blueprint Image',
     }}
   >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
+    <Fragment slot='content'>Ensure your online presence truly represents you.</Fragment>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
     </Fragment>
   </Content>
 
@@ -207,17 +210,17 @@ const metadata = {
       alt: 'Astronauts Image',
     }}
   >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
+    <Fragment slot='content'>Designed to foster growth and success.</Fragment>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
     </Fragment>
   </Content>
 
   <!-- Steps Widget ****************** -->
 
   <Steps
-    title="Get your dream website up and running in no time with AstroWind."
+    title='Get your dream website up and running in no time with AstroWind.'
     items={[
       {
         title: 'Step 1: <span class="font-medium">Download</span>',
@@ -243,7 +246,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      src: 'https://gearbox.imgix.net/https%3A%2F%2Fix-www.imgix.net%2Fsolutions%2Fwindmills.jpg?q=100&auto=format%2Ccompress%2Cenhance%2Ctrue&fm=pjpg&fit=crop&w=456&h=342&ixlib=js-2.0.0&s=02ad056aeb2a0e34d4b5f4d48bf6aaa3',
       alt: 'Steps image',
     }}
   />
@@ -251,9 +254,9 @@ const metadata = {
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
+    title='Most used widgets'
+    subtitle='Provides frequently used components for building websites using Tailwind CSS'
+    tagline='Components'
     items={[
       {
         title: 'Headers',
@@ -307,15 +310,15 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
     </Fragment>
   </Features2>
 
   <!-- HighlightedPosts Widget ******* -->
 
   <BlogLatestPosts
-    title="Find out more content in our Blog"
+    title='Find out more content in our Blog'
     information={`The blog is used to display AstroWind documentation.
                         Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
                         Astro is a very interesting technology. Thanks.
@@ -325,9 +328,9 @@ const metadata = {
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
+    title='Frequently Asked Questions'
+    subtitle='Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey.'
+    tagline='FAQs'
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
@@ -367,10 +370,10 @@ const metadata = {
 
   <Stats
     stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
+      { title: 'Connections', amount: '1K+' },
+      { title: 'Websites Maintained', amount: '20+' },
+      { title: 'Experience (Years)', amount: '3+ ' },
+      { title: 'Customer Satisfaction', amount: '100%' },
     ]}
   />
 
@@ -380,20 +383,19 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
+        text: 'Check out our blog',
         href: 'https://github.com/onwidget/astrowind',
         target: '_blank',
-        icon: 'tabler:download',
+        icon: 'tabler:news',
       },
     ]}
   >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+    <Fragment slot='title'>
+      Melder&nbsp;&nbsp;<br class='block sm:hidden' /><span class='sm:whitespace-nowrap'>Magnifique</span>
     </Fragment>
 
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+    <Fragment slot='subtitle'>
+      Our numbers are modest but our content is golden.<br class='hidden md:inline' /> Want a peek?
     </Fragment>
   </CallToAction>
 </Layout>
