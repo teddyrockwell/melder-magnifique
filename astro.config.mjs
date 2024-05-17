@@ -76,7 +76,7 @@ export default defineConfig({
 
   image: {
     service: squooshImageService(),
-    domains: ['cdn.pixabay.com'],
+    domains: ['www.meldermagnifique.com'],
   },
 
   markdown: {
