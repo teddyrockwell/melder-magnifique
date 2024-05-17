@@ -3,7 +3,7 @@ publishDate: 2023-08-12T00:00:00Z
 author: John Smith
 title: Astro and Tailwind are a powerful combo!
 excerpt: Two of my favorite things used together to create something awesome.
-image: '~/assets/images/metal-gear-solid-unsplash.jpeg'
+image: 'https://cdn.meldermagnifique.com/images%2Fmetal-gear-solid-unsplash-min.jpeg'
 category: Tutorials
 tags:
   - astro

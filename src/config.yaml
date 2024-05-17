@@ -18,7 +18,7 @@ metadata:
   openGraph:
     site_name: Melder Magnifique
     images:
-      - url: '~/assets/images/business-unsplash.jpg'
+      - url: 'https://cdn.meldermagnifique.com/images%2Fbusiness-unsplash-min.jpg'
         width: 1200
         height: 628
     type: website
