@@ -7,6 +7,8 @@ tags:
   - front-end
   - tools
   - resources
+metadata:
+  canonical: https://www.meldermagnifique.com/blog/useful-resources-to-create-websites
 ---
 
 ## Magna nunc senectus torquent per fusce sapien ligula tempus cra

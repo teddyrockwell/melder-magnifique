@@ -1,228 +1,380 @@
 ---
-import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import { getPermalink } from '~/utils/permalinks';
+
 const metadata = {
-  title: 'About us',
+  title: 'Personal Homepage Demo',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <Fragment slot='announcement'></Fragment>
+  <Fragment slot='header'>
+    <Header
+      links={[
+        { text: 'Home', href: '/' },
+        { text: 'About', href: '#about' },
+        { text: 'Resume', href: '#resume' },
+        { text: 'Education', href: '#education' },
+        { text: 'Skills', href: '#skills' },
+        { text: 'Testimonials', href: '#testimony' },
+        { text: 'Blog', href: '#blog' },
+      ]}
+      actions={[
+        {
+          text: 'Hire me',
+          href: getPermalink('/contact#form'),
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
 
   <Hero
-    tagline="About us"
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
-    }}
+    id='hero'
+    title=`<span class='text-accent dark:text-blue-600 highlight'>Theodore Melder</span>`
+    tagline='Teddy Rockwell'
+    actions={[{ variant: 'primary', text: 'Hire me', href: getPermalink('/contact#form') }]}
   >
-    <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white highlight"> Beautiful Website Templates</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+    <Fragment slot='subtitle'>
+      I'm a software developer. <br /> With 3 years of experience and a degree from Xavier University of Louisiana.<br
+      /> I infuse vision & functionality into websites, transforming concepts into results.
     </Fragment>
   </Hero>
 
-  <!-- Stats Widget ****************** -->
+  <!-- Content Widget **************** -->
 
-  <Stats
-    title="Statistics about us"
-    stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
-    ]}
-  />
-
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
+  <Content
+    id='about'
     columns={3}
-    isBeforeContent={true}
     items={[
       {
-        title: 'Educational',
-        description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
+        icon: 'tabler:brand-linkedin',
+        callToAction: {
+          target: '_blank',
+          text: '<span class="underline">Linkedin</span>',
+          href: 'https://www.linkedin.com/in/theodore-melder/',
+        },
       },
       {
-        title: 'Interior Design',
-        description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
+        icon: 'tabler:mail',
+        callToAction: {
+          target: '_blank',
+          text: '<span class="underline">Email</span>',
+          href: 'mailto:teddyrockwell@meldermagnifique.com',
+        },
       },
       {
-        title: 'Photography',
-        description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
-      },
-    ]}
-  />
-
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: 'E-commerce',
-        description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Blog',
-        description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Business',
-        description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Medical',
-        description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
-        icon: 'tabler:template',
+        icon: 'tabler:phone',
+        callToAction: {
+          target: '_blank',
+          text: '<span class="underline">Phone</span>',
+          href: 'tel:+15043522582',
+        },
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
+      src: '~/assets/images/theodore-melder.jpeg',
+      alt: 'A picture of Theodore Melder',
+      loading: 'eager',
     }}
-  />
+  >
+    <Fragment slot='content'>
+      <h2 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2'>About me</h2>
+      <p>I am the creator and operator of Melder Magnifique.</p>
+      <br />
+      <p>
+        I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate
+        details of web development, or the vibrant hues of life.
+      </p>
+      <br />
+      <p>If you're curious to dive deeper into my work, you can follow or contact me:</p>
+    </Fragment>
 
-  <!-- Steps2 Widget ****************** -->
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
+    </Fragment>
+  </Content>
 
-  <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id='resume'
+    title='Work experience'
     items={[
       {
-        title: 'Customer-centric approach',
-        description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
+        title:
+          'Full Stack Developer <br /> <span class="font-normal">Zehnder Communications</span> <br /> <span class="text-sm font-normal">2023 - Present</span>',
+        description: ``,
+        icon: 'tabler:briefcase',
       },
       {
-        title: 'Constant Improvement',
-        description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
+        title: 'Open Source & Freelance Web Development <br /> <span class="text-sm font-normal">2022 - Present</span>',
+        description: ``,
+        icon: 'tabler:briefcase',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id='education'
+    title='Education'
+    items={[
+      {
+        title: `Full Stack Web Development <br/ > <span class="italic font-light text-base">IBC Fundamentals of Javascript, Functional Programming, and Web Development Level 3</span> <br /> <span class="font-normal">Operation Spark</span> <br /> <span class="text-sm font-normal">2022 - 2023</span>`,
+        icon: 'tabler:device-desktop',
       },
       {
-        title: 'Ethical Practices',
-        description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        title: `Bachelor of Science in Public Health <br /> <span class="font-normal">Xavier University of Louisiana</span> <br /> <span class="text-sm font-normal">2017 - 2022</span>`,
+        icon: 'tabler:school',
+      },
+      {
+        title: `Lusher Charter School <br /> <span class="text-sm font-normal">2012 - 2017</span>`,
+        icon: 'tabler:school',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    id='skills'
+    title='Skills'
+    subtitle=`Here are my proficiencies`
+    columns={3}
+    defaultIcon='tabler:point-filled'
+    items={[
+      {
+        title: 'Web Development',
+        description: 'Proficient in crafting visually appealing websites that convey messages effectively.',
+      },
+      {
+        title: 'Branding and identity',
+        description: 'Skilled at developing cohesive brand identities, including logos and brand guidelines.',
+      },
+      {
+        title: 'User-centered design',
+        description: 'Experienced in creating user-friendly interfaces and optimizing user experiences.',
+      },
+      {
+        title: 'Adobe Creative Suite',
+        description: 'Skilled in using Photoshop, Illustrator, and InDesign to create and edit visual elements.',
+      },
+      {
+        title: 'Typography',
+        description: 'Adept in selecting and manipulating typefaces to enhance design aesthetics.',
+      },
+      {
+        title: 'Color theory',
+        description: 'Proficient in using color to evoke emotions and enhance visual harmony.',
+      },
+      {
+        title: 'Print and digital design',
+        description: 'Knowledgeable in designing for both print materials and digital platforms.',
+      },
+      {
+        title: 'Attention to detail',
+        description: 'Diligent in maintaining precision and quality in all design work.',
+      },
+      {
+        title: 'Adaptability',
+        description: 'Quick to adapt to new design trends, technologies, and client preferences.',
       },
     ]}
   />
 
-  <!-- Steps2 Widget ****************** -->
+  <!-- Content Widget **************** -->
 
-  <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
-    isReversed={true}
+  <!-- <Content
+    id='porfolio'
+    title='Elevating visual narratives'
+    subtitle='Embark on a design journey that surpasses pixels, entering a realm of imagination. Explore my portfolio, where passion and creativity converge to shape enthralling visual narratives.'
+    isReversed
+    items={[
+      {
+        title: 'Description:',
+        description:
+          'Developed a comprehensive brand identity for a tech startup, Tech Innovators, specializing in disruptive innovations. The goal was to convey a modern yet approachable image that resonated with both corporate clients and tech enthusiasts.',
+      },
+      {
+        title: 'Role:',
+        description:
+          'Led the entire branding process from concept to execution. Created a dynamic logo that symbolized innovation, selected a vibrant color palette, and I designed corporate stationery, website graphics, and social media assets.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1658248165252-71e116af1b34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80',
+      alt: 'Tech Design Image',
+    }}
     callToAction={{
-      text: 'See more',
-      href: '/',
+      target: '_blank',
+      text: 'Go to the project',
+      icon: 'tabler:chevron-right',
+      href: '#',
     }}
+  >
+    <Fragment slot='content'>
+      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2'>
+        Project 1: <br /><span class='text-2xl'>Brand identity for tech innovators</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
+    </Fragment>
+  </Content> -->
+
+  <!-- Content Widget **************** -->
+
+  <!-- <Content
+    isReversed
+    isAfterContent={true}
     items={[
       {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
-        icon: 'tabler:globe',
+        title: 'Description:',
+        description:
+          'Designed a captivating event poster for an art and music festival, "ArtWave Fusion," aiming to showcase the synergy between visual art and music genres.',
       },
       {
-        title: 'Positive customer feedback and reviews',
-        description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
-        icon: 'tabler:message-star',
+        title: 'Role:',
+        description: `Translated the festival's creative theme into a visually striking poster. Used bold typography, vibrant colors, and abstract elements to depict the fusion of art and music. Ensured the design captured the festival's vibrant atmosphere.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1619983081563-430f63602796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      alt: 'Art and Music Poster Image',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Go to the project',
+      icon: 'tabler:chevron-right',
+      href: '#',
+    }}
+  >
+    <Fragment slot='content'>
+      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2'>
+        Project 2: <br /><span class='text-2xl'>Event poster for art & music festival</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
+    </Fragment>
+  </Content> -->
+
+  <!-- Content Widget **************** -->
+
+  <!-- <Content
+    isReversed
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Description:',
+        description: `Redesigned the e-commerce website for an eco-conscious fashion brand, GreenVogue. The objective was to align the brand's online presence with its sustainable ethos and improve user experience.`,
       },
       {
-        title: 'Awards and recognition as industry experts',
-        description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
-        icon: 'tabler:award',
+        title: 'Role:',
+        description: `Conducted a thorough analysis of the brand's values and customer base to inform the design direction. Created a visually appealing interface with intuitive navigation, highlighting sustainable materials, and integrating a user-friendly shopping experience.`,
+      },
+    ]}
+    image={{
+      src: 'https://plus.unsplash.com/premium_photo-1683288295841-782fa47e4770?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+      alt: 'Fashion e-commerce Image',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Go to the project',
+      icon: 'tabler:chevron-right',
+      href: '#',
+    }}
+  >
+    <Fragment slot='content'>
+      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2'>
+        Project 3: <br /><span class='text-2xl'>E-commerce website redesign for fashion brand</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
+    </Fragment>
+  </Content> -->
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    id='testimony'
+    title='Client testimonials'
+    subtitle=`Here's what clients have to say:`
+    testimonials={[
+      {
+        testimonial: `He took our vague concept and turned it into a visual masterpiece that perfectly aligned with our goals. His attention to detail and ability to translate ideas into compelling visuals exceeded our expectations.`,
+        name: 'Mark Thompson',
+        job: 'Digital Lead',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Mark Thompson Image',
+        },
+      },
+      {
+        testimonial: `He transformed our brand identity with his creative finesse, capturing our essence in every element of our website. His dedication and talent truly shine through his work.`,
+        name: 'Emily Martinez',
+        job: 'Senior Project Manager',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80',
+          alt: 'Emily Martinez Image',
+        },
+      },
+      {
+        testimonial: `He has an uncanny ability to communicate. He crafted a website for our NGO that not only represents our cause but also evokes empathy. His professionalism and commitment make him a developer of exceptional caliber.`,
+        name: 'Laura Simmons',
+        job: 'Creative Director',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554727242-741c14fa561c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Laura Simmons Image',
+        },
       },
     ]}
   />
 
-  <!-- Features2 Widget ************** -->
+  <!-- CallToAction Widget *********** -->
 
-  <Features2
-    title="Our locations"
-    tagline="Find us"
-    columns={4}
-    items={[
+  <CallToAction
+    title="Let's create together"
+    subtitle='Ready to transform your vision into tangible results?'
+    actions={[
       {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
-      },
-      {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
-      },
-      {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
-      },
-      {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
+        variant: 'primary',
+        text: 'Hire me',
+        href: getPermalink('/contact#form'),
       },
     ]}
   />
 
-  <!-- Features2 Widget ************** -->
+  <!-- BlogLatestPost Widget **************** -->
 
-  <Features2
-    title="Technical Support"
-    tagline="Contact us"
-    columns={2}
-    items={[
-      {
-        title: 'Chat with us',
-        description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
-        icon: 'tabler:messages',
-      },
-      {
-        title: 'Call us',
-        description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
-        icon: 'tabler:headset',
-      },
-    ]}
-  />
+  <BlogLatestPosts
+    id='blog'
+    title='View my articles'
+    information={`I write to share information that I believe others might find useful, insightful, or entertaining. Enjoy.`}
+  >
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
+    </Fragment>
+  </BlogLatestPosts>
 </Layout>

@@ -18,14 +18,14 @@ metadata:
   openGraph:
     site_name: Melder Magnifique
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/business-unsplash.jpg'
         width: 1200
         height: 628
     type: website
   twitter:
     handle: '@mrteddyrockwell'
     # TODO: Not sure about this one for the site or cardType!
-    site: '@onwidget'
+    site: 'Melder Magnifique'
     cardType: summary_large_image
 
 i18n:
@@ -39,7 +39,7 @@ apps:
 
     post:
       isEnabled: true
-      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      permalink: '/blog/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
       robots:
         index: true
 
