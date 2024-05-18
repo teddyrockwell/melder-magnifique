@@ -2,7 +2,7 @@
 publishDate: 2023-08-06T00:00:00Z
 title: Customization is key!
 excerpt: Our guide unlocks seamless customization steps for a unique online presence.
-image: 'https://cdn.meldermagnifique.com/images%2Ftech-unsplash-min.jpeg'
+image: '~/assets/images/tech-unsplash.jpeg'
 tags:
   - astro
   - tailwind css
