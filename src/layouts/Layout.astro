@@ -29,6 +29,7 @@ const { language, textDirection } = I18N;
 <!doctype html>
 <html lang={language} dir={textDirection} class='2xl:text-[20px]'>
   <head>
+    <CookieYes />
     <CommonMeta />
     <Favicons />
     <CustomStyles />
@@ -36,7 +37,6 @@ const { language, textDirection } = I18N;
     <Metadata {...metadata} />
     <SiteVerification />
     <Analytics />
-    <CookieYes />
 
     <!-- Comment the line below to disable View Transitions -->
     <ViewTransitions fallback='swap' />
