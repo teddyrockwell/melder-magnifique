@@ -4,7 +4,7 @@ site:
   base: '/'
   trailingSlash: false
   # TODO: Add Google Site Verification ID here!
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId: A9eRC9GBD4LFhOyL2in8Ehi8mdFqDZ8e9tl9swk2CuI
 
 # Default SEO metadata
 metadata:
@@ -68,7 +68,7 @@ analytics:
   vendors:
     # TODO: Get Google Analytics id
     googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
+      id: 'G-BY0NKSG814' # or "G-XXXXXXXXXX"
 
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
