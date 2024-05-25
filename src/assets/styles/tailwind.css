@@ -36,6 +36,9 @@
   .btn-tertiary {
     @apply btn border-none shadow-none text-muted hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
   }
+  a.hp-anchor {
+    @apply text-blue-600 dark:text-accent font-semibold underline;
+  }
 }
 
 #header.scroll > div:first-child {
