@@ -8,6 +8,8 @@ const { iconName, intro, phrase } = Astro.props;
     <span class='font-bold'>
       <Icon name=`tabler:${iconName}` class='w-5 h-5 inline-block align-text-bottom' /> {intro}</span
     >
-    {phrase}
+    <span class='italic tracking-wider leading-relaxed'>
+      {phrase}
+    </span>
   </div>
 </section>
