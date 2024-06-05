@@ -4,9 +4,9 @@ title: Customization is key!
 excerpt: Our guide unlocks seamless customization steps for a unique online presence.
 image: '~/assets/images/tech-unsplash.jpeg'
 tags:
-  - astro
-  - tailwind css
-  - theme
+  - Astro
+  - Tailwind Css
+  - Theme
 metadata:
   canonical: https://www.meldermagnifique.com/blog/how-to-customize-astrowind-to-your-brand
 ---

@@ -4,9 +4,9 @@ title: Useful tools and resources to create a professional website
 excerpt: Explore vital tools and resources for a sleek website. From design to functionality, our guide elevates your online presence.
 image: '~/assets/images/street-fighter-unsplash.jpeg'
 tags:
-  - front-end
-  - tools
-  - resources
+  - Frontend
+  - Tools
+  - Resources
 metadata:
   canonical: https://www.meldermagnifique.com/blog/useful-resources-to-create-websites
 ---

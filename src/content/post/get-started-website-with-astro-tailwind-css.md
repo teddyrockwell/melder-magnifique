@@ -6,8 +6,8 @@ excerpt: Two of my favorite things used together to create something awesome.
 image: '~/assets/images/metal-gear-solid-unsplash.jpeg'
 category: Tutorials
 tags:
-  - astro
-  - tailwind css
+  - Astro
+  - Tailwind Css
 metadata:
   canonical: https://www.meldermagnifique.com/blog/get-started-website-with-astro-tailwind-css
 ---
