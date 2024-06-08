@@ -2,7 +2,7 @@ site:
   name: Melder Magnifique
   site: 'https://www.meldermagnifique.com'
   base: '/'
-  trailingSlash: false
+  trailingSlash: true
   # TODO: Add Google Site Verification ID here!
   googleSiteVerificationId: A9eRC9GBD4LFhOyL2in8Ehi8mdFqDZ8e9tl9swk2CuI
 
@@ -18,7 +18,7 @@ metadata:
   openGraph:
     site_name: Melder Magnifique
     images:
-      - url: 'https://cdn.meldermagnifique.com/images%2Fbusiness-unsplash-min.jpg'
+      - url: '~/assets/images/business-unsplash.jpg'
         width: 1200
         height: 628
     type: website

@@ -12,6 +12,8 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { getBlogPermalink } from '~/utils/permalinks';
+import PageFindSearch from '~/components/widgets/PageFindSearch.jsx';
+import React from 'react';
 
 const metadata = {
   title: 'Melder Magnifique',
@@ -21,7 +23,9 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-
+  <div class='px-6 sm:px-6 pt-8 lg:pt-4 mx-auto max-w-4xl'>
+    <PageFindSearch client:load />
+  </div>
   <Hero
     actions={[
       {
@@ -67,8 +71,8 @@ const metadata = {
 
   <!-- Note Widget ******************* -->
 
-  <Note iconName='book' intro='Our philosophy:' phrase=`"Meld the life you want."` />
-
+  <Note iconName='book' intro='Our philosophy:' phrase='Meld the life you want.' />
+  
   <!-- Features Widget *************** -->
 
   <Features
@@ -139,7 +143,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://cdn.meldermagnifique.com/images%2Fknowledge-unsplash-min.jpeg',
+      src: '~/assets/images/knowledge-unsplash.jpeg',
       alt: 'Colorful Image',
     }}
   >
@@ -176,7 +180,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://cdn.meldermagnifique.com/images%2Faccess-unsplash-min.jpeg',
+      src: '~/assets/images/access-unsplash.jpeg',
       alt: 'Blueprint Image',
     }}
   >
