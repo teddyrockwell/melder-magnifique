@@ -42,6 +42,15 @@ export interface Post {
 
   /**  */
   readingTime?: number;
+
+  /**  */
+  headings?: Heading[]; // Add this line to include the headings property
+}
+export interface Heading {
+  depth: number;
+  value: string;
+  slug: string;
+  subheadings?: string;
 }
 
 export interface Taxonomy {

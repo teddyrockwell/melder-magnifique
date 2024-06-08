@@ -1,7 +1,7 @@
 import type { PaginateFunction } from 'astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import type { Post } from '~/types';
+import type { Post, Heading } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
 
@@ -42,7 +42,7 @@ const generatePermalink = async ({
 
 const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> => {
   const { id, slug: rawSlug = '', data } = post;
-  const { Content, remarkPluginFrontmatter } = await post.render();
+  const { Content, remarkPluginFrontmatter, headings: rawHeadings } = await post.render();
 
   const {
     publishDate: rawPublishDate = new Date(),
@@ -73,6 +73,14 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     title: tag,
   }));
 
+  const headings: Heading[] = rawHeadings
+    ? rawHeadings.map((heading: { depth: number; slug: string; text: string }) => ({
+        depth: heading.depth,
+        value: heading.text, // Assuming text is the correct property name for the heading value
+        slug: heading.slug,
+      }))
+    : [];
+
   return {
     id: id,
     slug: slug,
@@ -97,6 +105,8 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     // or 'content' in case you consume from API
 
     readingTime: remarkPluginFrontmatter?.readingTime,
+
+    headings: headings,
   };
 };
 

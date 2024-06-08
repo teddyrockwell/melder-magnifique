@@ -15,11 +15,17 @@ metadata:
 import DListItem from '~/components/ui/DListItem.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 
+<section>
+
 ## Overview
 
 It can be a somewhat daunting task trying to get a handle on _AstroWind_ internals, and particularly various points of usage.
 
 This page outlines and clarifies some of the techniques found in _AstroWind_. Use it as a guide for further modification, or an instructional for techniques to use in your own endeavors.
+
+</section>
+
+<section>
 
 ## Styling
 
@@ -41,6 +47,10 @@ The styling mechanism consists of the following files (all paths are prefixed wi
   _CustomStyles.astro_ component, described above, is injected into the html header.
 </DListItem>
 
+</section>
+
+<section>
+
 ### Dark Mode
 
 _Dark Mode_ is triggered by the little 'sunlight' icon:<ToggleTheme/>in the page header. It is defined in the _components/common/ToggleTheme.astro_, but the event is attached and the action defined in _components/common/BasicScripts.astro_ in the following snippet:
@@ -56,6 +66,10 @@ attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {
 ```
 
 Note that this is a client event. _BasicScripts.astro_ defines several other client-side functionality as well as this one.
+
+</section>
+
+<section>
 
 ## Advanced Slot Usage
 
@@ -86,6 +100,10 @@ import MyComponent from "~/components/MyComponent"; ...
   <p>This content will be displayed in the slot</p>
 </MyComponent>
 ```
+
+</section>
+
+<section>
 
 ### Alternate usage
 
@@ -132,6 +150,10 @@ _MyComponent_ renders the markdown to html and then injects it into the div.
 This actually has a big advantage -- consider that with the normal usage you don't have access to the slot contents: _Astro_ just plops the content into the _&lt;slot/&gt;_ tag. Using this method, however, allows you to access the content and further manipulate it before it gets inserted into the html.
 
 This allows a great deal of flexibility in component design.
+
+</section>
+
+<section>
 
 ### Yet Another Step
 
@@ -205,3 +227,5 @@ const { subtitle = await Astro.slots.render('subtitle') } = Astro.props;
 There's a lot to wrap your head around, here.
 
 Notice first that _subtitle_ is defined as a prop/argument, but it's being processed as a slot. Interestingly, prop args and slots seem to be somewhat interchangeable: if the subtitle was just a string, it would simply take that assignment. The main difference is that if you render them independently, you have to call the render with an _await_ modifier.
+
+</section>
