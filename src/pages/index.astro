@@ -12,6 +12,8 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { getBlogPermalink } from '~/utils/permalinks';
+import PageFindSearch from '~/components/widgets/PageFindSearch.jsx';
+import React from 'react';
 
 const metadata = {
   title: 'Melder Magnifique',
@@ -21,7 +23,9 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-
+  <div class='px-6 sm:px-6 pt-8 lg:pt-4 mx-auto max-w-4xl'>
+    <PageFindSearch client:load />
+  </div>
   <Hero
     actions={[
       {
@@ -68,6 +72,27 @@ const metadata = {
   <!-- Note Widget ******************* -->
 
   <Note iconName='book' intro='Our philosophy:' phrase='Meld the life you want.' />
+
+  <!-- <div id='search' transition:persist></div>
+  <script>
+    document.addEventListener('astro:page-load', (event) => {
+      new PagefindUI({
+        element: '#search',
+        highlightParam: 'highlight',
+        showSubResults: true,
+        pageSize: 7,
+        translations: {
+          placeholder: 'Search',
+          zero_results: "Couldn't find [SEARCH_TERM].",
+        },
+        // ranking: {
+        //   pageLength: 0.5,
+        //   termSimilarity: 0.75,
+        //   termFrequency: 0.5,
+        // },
+      });
+    });
+  </script> -->
 
   <!-- Features Widget *************** -->
 
