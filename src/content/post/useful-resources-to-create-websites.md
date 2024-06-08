@@ -11,11 +11,17 @@ metadata:
   canonical: https://www.meldermagnifique.com/blog/useful-resources-to-create-websites
 ---
 
+<section>
+
 ## Magna nunc senectus torquent per fusce sapien ligula tempus cra
 
 Lorem ipsum dolor sit amet consectetur adipiscing, elit fusce imperdiet gravida velit massa, ligula aenean suscipit sociis lacinia. Sapien scelerisque rutrum sem accumsan orci imperdiet aliquam inceptos aliquet tempus ornare, netus nostra nam nunc platea pulvinar urna et suscipit pellentesque, aenean congue sociis non tellus quis proin etiam venenatis pretium. Nibh senectus lacinia volutpat nostra taciti ac posuere, dictum ultricies dictumst luctus in vehicula, mus molestie venenatis penatibus ridiculus elementum. Phasellus sollicitudin dignissim parturient tempor cubilia erat massa eleifend dapibus, condimentum cras tortor eu sem dictumst non. Faucibus neque est malesuada nostra luctus maecenas at condimentum, arcu eros vulputate curabitur blandit mollis volutpat, lectus leo dictumst duis semper tempor hendrerit. Egestas scelerisque fusce torquent cubilia consequat conubia lacus et mollis, condimentum taciti elementum sapien risus vulputate est.
 
 Tristique eleifend enim praesent mollis sem leo, molestie dictum penatibus sodales consequat ligula nulla, platea feugiat aptent sapien turpis. Mollis mus ac taciti maecenas pretium hendrerit proin accumsan, mattis dictumst netus nunc facilisi morbi cursus euismod quis, a commodo nulla integer varius enim vehicula. Consequat mi risus vulputate ullamcorper sociosqu pretium molestie cursus, parturient viverra non tempor tellus convallis vitae eleifend mus, bibendum pellentesque imperdiet vivamus nunc phasellus iaculis. Volutpat est ac dictumst eleifend maecenas torquent quam hac, mollis aliquam mattis euismod ornare risus fringilla proin nisi, sem fermentum primis ultrices varius etiam id. Posuere nunc mus curabitur condimentum lobortis euismod donec tincidunt ridiculus, tristique senectus cum taciti quam blandit leo malesuada, sociis nullam cras litora sem laoreet sed nec.
+
+</section>
+
+<section>
 
 ## Magna lacus tortor luctus platea co
 
@@ -62,3 +68,5 @@ Interdum fames lobortis sollicitudin aliquet mus aptent netus, penatibus consequ
 Nulla nisi ac placerat duis semper mus cursus interdum netus vestibulum, tortor praesent proin nec rhoncus magnis commodo blandit himenaeos purus, volutpat id montes scelerisque suspendisse risus nisl erat dui. Senectus et habitant dis nulla velit faucibus venenatis sapien, dapibus etiam metus eget magnis feugiat tristique. Augue montes elementum pulvinar mollis pellentesque diam cursus tristique vel cubilia erat mus, congue curae sagittis dui quis fusce tortor consequat taciti natoque. Praesent montes erat feugiat sed euismod condimentum potenti malesuada nec, mi vitae suspendisse aptent senectus eleifend faucibus pulvinar scelerisque, augue ornare accumsan pretium magna eu iaculis metus. Suscipit accumsan massa vitae platea ad duis rhoncus fermentum vulputate, interdum pretium metus per aptent enim in facilisis eros, sollicitudin consequat iaculis erat dictumst quisque leo sociis.
 
 Tempor etiam potenti auctor est ut habitant ac nisl ultrices pulvinar, sem primis tempus lacus aliquam consequat fringilla tristique. Consequat cum rhoncus massa sociis blandit rutrum nisi quam cras vitae fusce, sociosqu erat penatibus convallis fames accumsan eros himenaeos pulvinar sagittis, habitasse primis integer odio nascetur in montes faucibus semper potenti. Diam aliquam fringilla risus phasellus habitasse aenean eu erat, netus nulla pellentesque ut morbi torquent pharetra semper, sed etiam primis in conubia hendrerit velit. Ornare magna dictum purus metus sociosqu pulvinar sed, quam faucibus posuere pretium senectus interdum. Ornare sodales in litora nascetur sociosqu senectus auctor, cras arcu fusce ac inceptos integer tempor aliquam, tristique imperdiet metus hendrerit erat eleifend.
+
+</section>

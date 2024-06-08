@@ -60,6 +60,15 @@ const postCollection = defineCollection({
     author: z.string().optional(),
 
     metadata: metadataDefinition(),
+    headings: z
+      .array(
+        z.object({
+          depth: z.number(),
+          value: z.string(),
+          slug: z.string(),
+        })
+      )
+      .optional(),
   }),
 });
 
