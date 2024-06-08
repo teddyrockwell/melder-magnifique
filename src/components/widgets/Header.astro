@@ -135,7 +135,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       ]}
     >
       <div class='items-center flex justify-between w-full md:w-auto'>
-        <div class='flex'>
+        <div class='flex -mb-16 md:mb-0'>
           {showToggleTheme && <ToggleTheme iconClass='w-6 h-6 md:w-5 md:h-5 md:inline-block' />}
           {
             showRssFeed && (
@@ -151,7 +151,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         </div>
         {
           actions?.length ? (
-            <span class='ml-4 rtl:ml-0 rtl:mr-4'>
+            <span class='ml-4 rtl:ml-0 rtl:mr-4 mb-16 md:mb-0'>
               {actions.map((btnProps) => (
                 <Button {...btnProps} class='ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto' />
               ))}
