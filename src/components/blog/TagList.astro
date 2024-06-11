@@ -6,7 +6,7 @@ const tags = await getStaticTags();
 ---
 
 <div class='border-2 border-gray-500 dark:border-slate-300 rounded-md'>
-  <div class='mb-4 p-1 text-lg text-center'>Tags</div>
+  <div class='mb-4 p-1 text-lg text-center font-bold'>Tags</div>
   <ul class='overflow-y-auto max-h-48' id='tag-list'>
     {
       tags.map((tag) => (
