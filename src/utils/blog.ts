@@ -225,6 +225,52 @@ export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: Pagin
   );
 };
 
+/** Helper function to fetch all categories and calculate their counts */
+export const getCategoriesWithCounts = async (): Promise<Array<{ slug: string; title: string; count: number }>> => {
+  const posts = await fetchPosts();
+  const categories: Record<string, { slug: string; title: string; count: number }> = {};
+
+  posts.forEach((post) => {
+    if (post.category) {
+      const slug = post.category.slug;
+      if (!categories[slug]) {
+        categories[slug] = { slug: slug, title: post.category.title, count: 0 };
+      }
+      categories[slug].count += 1;
+    }
+  });
+
+  return Object.values(categories).sort((a, b) => a.title.localeCompare(b.title));
+};
+
+/** Function to fetch and pre-render all categories with counts */
+export const getStaticCategories = async () => {
+  return await getCategoriesWithCounts();
+};
+
+/** Helper function to fetch all tags and calculate their counts */
+export const getTagsWithCounts = async (): Promise<Array<{ slug: string; title: string; count: number }>> => {
+  const posts = await fetchPosts();
+  const tags: Record<string, { slug: string; title: string; count: number }> = {};
+
+  posts.forEach((post) => {
+    Array.isArray(post.tags) &&
+      post.tags.forEach((tag) => {
+        if (!tags[tag?.slug]) {
+          tags[tag?.slug] = { slug: tag?.slug, title: tag?.title, count: 0 };
+        }
+        tags[tag.slug].count += 1;
+      });
+  });
+
+  return Object.values(tags).sort((a, b) => a.title.localeCompare(b.title));
+};
+
+/** Function to fetch and pre-render all tags with counts */
+export const getStaticTags = async () => {
+  return await getTagsWithCounts();
+};
+
 /** */
 export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogTagRouteEnabled) return [];

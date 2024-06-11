@@ -108,7 +108,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
     {
       post.tags && Array.isArray(post.tags) ? (
         <footer class='mt-5'>
-          <PostTags tags={post.tags} />
+          <PostTags tags={post.tags.sort((a, b) => a.title.localeCompare(b.title))} />
         </footer>
       ) : (
         <Fragment />

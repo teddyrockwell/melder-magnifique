@@ -1,0 +1,48 @@
+---
+// Import necessary utilities and types
+import { getStaticCategories } from '~/utils/blog';
+
+const categories = await getStaticCategories();
+---
+
+<div class='border-2 border-gray-500 dark:border-slate-300 rounded-md'>
+  <div class='mb-4 p-1 text-lg text-center'>Categories</div>
+  <ul class='overflow-y-auto max-h-48' id='category-list'>
+    {
+      categories.map((category) => (
+        <li class='flex justify-between p-2 hover:bg-gray-100 dark:hover:bg-accent'>
+          <a href={`/category/${category.slug}/`} class='flex-grow'>
+            {category.title}
+          </a>
+          <span class='text-muted dark:text-slate-300'>({category.count})</span>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  /* Custom scrollbar styles */
+  #category-list::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  #category-list::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  #category-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  #category-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  /* Firefox scrollbar styles */
+  #category-list {
+    scrollbar-width: thin;
+    scrollbar-color: #888 transparent;
+  }
+</style>
