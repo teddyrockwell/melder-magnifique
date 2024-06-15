@@ -23,11 +23,6 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-  <div class='px-6 sm:px-6 pt-8 lg:pt-4 mx-auto max-w-4xl'>
-    <!-- <PageFindSearch client:load /> -->
-  </div>
-  <br class='hidden sm:block' />
-  <br class='hidden sm:block' />
   <Hero
     actions={[
       {
@@ -39,35 +34,22 @@ const metadata = {
       { text: 'Learn more', href: '#features' },
     ]}
     image={{
-      src: '~/assets/images/hero-image.png',
+      src: '~/assets/images/success-unsplash.jpeg',
       alt: 'Man with outstretched arms facing sunset',
     }}
   >
     <Fragment slot='title'>
-      <span class='text-accent dark:text-blue-600 highlight tracking-normal'>Melder Magnifique</span>
-      <span class='hidden sm:block sm:mb-8'>Unlock your true potential</span>
+      Melder Magnifique<span class='hidden xl:inline'>where we help you</span>
+      <span class='text-accent dark:text-white highlight'>Unlock your potential</span> and become your best.
     </Fragment>
 
     <Fragment slot='subtitle'>
-      <span class='leading-9 tracking-normal'>
-        We empower you with content and resources designed to elevate your <a href='/' class='hp-anchor'>mind</a>, <a
-          href='/'
-          class='hp-anchor'>body</a
-        >, and <a href='/' class='hp-anchor'>spirit</a>. Dive into expert <a href='/' class='hp-anchor'>wisdom</a>,
-        optimize your <a href='/' class='hp-anchor'>health</a>, and build lasting <a href='/' class='hp-anchor'
-          >wealth</a
-        >.
+      <span class='hidden sm:inline'>
+        <span class='font-semibold'>We</span> empower you with content and resources designed to elevate your mind, body,
+        and spirit.
       </span>
-      <!-- <span class='block mb-1 sm:hidden font-bold text-blue-600'>
-        Melder<br />
-        / ˈmɛl dər / • <em>noun</em><br /></span
-      ><span
-        class='block mb-1 sm:hidden font-bold text-black leading-tighter tracking-tighter font-heading dark:text-gray-200'
-        >1. One who melds.</span
-      > -->
-      <br />
-      <br />
-      <span class='font-semibold mb-2'>Achieve holistic success and become your best.</span>
+      <span class='block mb-1 sm:hidden font-bold text-blue-600'>Achieve holistic success and become your best.</span>
+      Dive into expert wisdom, optimize your health, and build lasting wealth.
     </Fragment>
   </Hero>
 
