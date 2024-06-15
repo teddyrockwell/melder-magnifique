@@ -11,10 +11,10 @@ import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification from '~/components/common/SiteVerification.astro';
 import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
-import CookieYes from '~/components/common/CookieYes.astro';
-import AdSense from '~/components/common/AdSense.astro';
-import GoogleTagManagerBody from '~/components/common/GoogleTagManagerBody.astro';
-import GoogleTagManagerHead from '~/components/common/GoogleTagManagerHead.astro';
+// import CookieYes from '~/components/common/CookieYes.astro';
+// import AdSense from '~/components/common/AdSense.astro';
+// import GoogleTagManagerBody from '~/components/common/GoogleTagManagerBody.astro';
+// import GoogleTagManagerHead from '~/components/common/GoogleTagManagerHead.astro';
 
 // Comment the line below to disable View Transitions
 import { ViewTransitions } from 'astro:transitions';
@@ -32,8 +32,8 @@ const { language, textDirection } = I18N;
 <!doctype html>
 <html lang={language} dir={textDirection} class='2xl:text-[20px]'>
   <head>
-    <GoogleTagManagerHead />
-    <CookieYes />
+    <!-- <GoogleTagManagerHead /> -->
+    <!-- <CookieYes /> -->
     <CommonMeta />
     <Favicons />
     <CustomStyles />
@@ -41,16 +41,16 @@ const { language, textDirection } = I18N;
     <Metadata {...metadata} />
     <SiteVerification />
     <Analytics />
-    <AdSense />
-    <link href='/pagefind/pagefind-ui.css' rel='stylesheet' />
-    <script src='/pagefind/pagefind-ui.js' type='text/javascript'></script>
+    <!-- <AdSense /> -->
+    <!-- <link href='/pagefind/pagefind-ui.css' rel='stylesheet' />
+    <script src='/pagefind/pagefind-ui.js' type='text/javascript'></script> -->
 
     <!-- Comment the line below to disable View Transitions -->
     <ViewTransitions fallback='swap' />
   </head>
 
   <body class='antialiased text-default bg-page tracking-tight'>
-    <GoogleTagManagerBody />
+    <!-- <GoogleTagManagerBody /> -->
     <slot />
 
     <BasicScripts />
