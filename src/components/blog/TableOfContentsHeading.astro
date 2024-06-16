@@ -3,28 +3,13 @@
 const { heading } = Astro.props;
 ---
 
-<!-- 
-<li class='list-none list-inside px-1 py-1'>
-  <a href={'#' + heading.slug} class='hover:text-red-500 font-semibold text-md'>
+<li>
+  <a href={'#' + heading.slug} class={`toc-link ${heading.depth === 3 ? 'toc-link-level-2' : ''}`}>
     {heading.value}
   </a>
   {
-    heading.children.length > 0 && (
-      <ul class='text-blue-500 ml-2'>
-        {heading.children.map((child) => (
-          <Astro.self heading={child} />
-        ))}
-      </ul>
-    )
-  }
-</li> -->
-<li class=''>
-  <a href={'#' + heading.slug} class='toc-link'>
-    {heading.value}
-  </a>
-  {
-    heading.subheadings.length > 0 && (
-      <ul class='toc-sublist'>
+    heading.subheadings && heading.subheadings.length > 0 && (
+      <ul>
         {heading.subheadings.map((subheading) => (
           <Astro.self heading={subheading} />
         ))}
@@ -32,46 +17,35 @@ const { heading } = Astro.props;
     )
   }
 </li>
+
 <style>
-  nav.toc {
-    display: block;
-    position: sticky;
-    top: 0.5rem;
-    padding-left: 1rem;
+  .toc-link-level-2 {
+    padding-left: 10px;
+    border-left: 3px solid #ddd;
+    font-weight: 400;
   }
-
-  ul {
-    list-style-type: none;
-    padding-left: 1rem;
+  .toc-link-level-2.active,
+  .toc-link-level-2:hover {
+    border-left-color: var(--aw-color-primary);
+    text-decoration: underline;
+    @apply dark:border-l-accent;
   }
-
-  svg.toc-progress {
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  .toc-link {
+    color: gray;
   }
-
-  path.toc-marker {
-    /* stroke: #ff6347; Change this to your desired color */
-    stroke: var(--aw-color-accent);
-    stroke-width: 4px; /* Adjust this to change the thickness */
-    fill: none;
-    transition: stroke-dasharray 0.3s ease;
+  a.toc-link {
+    font-weight: 600;
   }
-
-  a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    padding: 0.25rem 0.5rem;
+  li {
+    margin: 0.275rem 0;
   }
-
-  a:not(.active) {
-    color: #899;
+  a.toc-link.toc-link-level-2 {
+    font-weight: 400;
+  }
+  .toc-link:hover,
+  .toc-link.active {
+    color: black;
+    text-decoration: underline;
+    @apply dark:text-white;
   }
 </style>
-
-<!-- <script src='./scripts/toc-active.js'></script> -->

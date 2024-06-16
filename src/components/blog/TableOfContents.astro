@@ -1,8 +1,7 @@
 ---
 // TableOfContents.astro
-
 import TableOfContentsHeading from './TableOfContentsHeading.astro';
-
+import { Icon } from 'astro-icon/components';
 interface Heading {
   depth: number;
   value: string;
@@ -11,7 +10,6 @@ interface Heading {
 }
 
 const { headings } = Astro.props;
-const toc: Heading[] = buildToc(headings);
 
 function buildToc(headings: Heading[]): Heading[] {
   const toc: Heading[] = [];
@@ -19,7 +17,6 @@ function buildToc(headings: Heading[]): Heading[] {
   headings.forEach((h) => {
     const heading: Heading = { ...h, subheadings: [] };
     parentHeadings.set(heading.depth, heading);
-    // Change 2 to 1 if your markdown includes your <h1>
     if (heading.depth === 2) {
       toc.push(heading);
     } else {
@@ -28,67 +25,60 @@ function buildToc(headings: Heading[]): Heading[] {
   });
   return toc;
 }
+
+const toc = buildToc(headings);
 ---
 
-<div>
-  <div class='mb-4 p-1 text-lg text-center font-bold'>Table Of Contents</div>
+<div class='toc-container'>
+  <div class='toc-tagline-container flex justify-between mb-2.5'>
+    <div class='tagline uppercase font-semibold'>Inside This Article</div>
+    <div class='toc-back-to-top'>
+      <Icon
+        name='tabler:arrow-big-up-lines-filled'
+        class='w-6 h-6 inline-block -mt-0.5 dark:text-gray-400 hover:cursor-pointer'
+      />
+    </div>
+  </div>
+  <div class='toc-progress-bar'><div></div></div>
   <nav class='toc'>
     <ul>
       {toc.map((heading) => <TableOfContentsHeading heading={heading} />)}
     </ul>
-    <svg class='toc-progress' xmlns='http://www.w3.org/2000/svg'>
-      <path
-        class='toc-marker'
-        fill='none'
-        stroke='currentColor'
-        stroke-width='2'
-        stroke-dasharray='1 0 0 1000'
-        stroke-dashoffset='1'
-        stroke-linecap='round'
-        stroke-linejoin='round'></path>
-    </svg>
   </nav>
 </div>
+
 <style>
-  nav.toc {
-    display: block;
-    position: sticky;
-    top: 0.5rem;
-    padding-left: 1rem;
+  .toc-progress-bar {
+    height: 4px;
+    background: lightgray;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    overflow: hidden;
   }
-
-  ul {
-    list-style-type: none;
-    padding-left: 1.2rem;
-  }
-
-  svg.toc-progress {
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+  .toc-progress-bar div {
     height: 100%;
+    background: var(--aw-color-primary);
+    width: 0;
+    @apply dark:bg-accent;
   }
-
-  path.toc-marker {
-    /* stroke: #ff6347; Change this to your desired color */
-    stroke: var(--aw-color-accent);
-    stroke-width: 4px; /* Adjust this to change the thickness */
-    fill: none;
-    transition: stroke-dasharray 0.3s ease;
+  .toc ul {
+    list-style-type: none;
+    padding: 0;
   }
-
-  a {
-    display: block;
+  .toc li {
+    margin-bottom: 10px;
+  }
+  .toc a {
     text-decoration: none;
-    color: inherit;
+    color: gray;
     padding: 0.25rem 0.5rem;
+    display: block;
   }
-
-  a:not(.active) {
-    color: #899;
+  .toc a:hover,
+  .toc a.active {
+    color: black;
+    text-decoration: underline;
+    @apply dark:text-white;
   }
 </style>
-
-<script src='./scripts/toc-active.js'></script>
+<script src='./scripts/toc.js'></script>

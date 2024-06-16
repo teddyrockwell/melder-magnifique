@@ -61,6 +61,7 @@ export default [
       'types.generated.d.ts',
       '.astro',
       'src/components/common/GoogleTagManagerHead.astro',
+      'src/components/blog/scripts/toc.js',
     ],
   },
 ];
