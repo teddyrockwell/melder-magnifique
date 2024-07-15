@@ -72,6 +72,21 @@ const postCollection = defineCollection({
   }),
 });
 
+// Define author collection schema
+const authorCollection = defineCollection({
+  schema: z.object({
+    name: z.string(),
+    title: z.string().optional(),
+    bio: z.string().optional(),
+    authorPage: z.string().optional(),
+    image: z.string().optional(),
+    twitter: z.string().url().optional(),
+    linkedin: z.string().url().optional(),
+    github: z.string().url().optional(),
+  }),
+});
+
 export const collections = {
   post: postCollection,
+  author: authorCollection,
 };

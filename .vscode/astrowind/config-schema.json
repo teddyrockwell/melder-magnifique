@@ -134,6 +134,30 @@
             "relatedPostsCount": {
               "type": "integer"
             },
+            "author": {
+              "type": "object",
+              "properties": {
+                "isEnabled": {
+                  "type": "boolean"
+                },
+                "pathname": {
+                  "type": "string"
+                },
+                "robots": {
+                  "type": "object",
+                  "properties": {
+                    "index": {
+                      "type": "boolean"
+                    },
+                    "follow": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": ["index"]
+                }
+              },
+              "required": ["isEnabled", "permalink", "robots"]
+            },
             "post": {
               "type": "object",
               "properties": {
@@ -231,7 +255,7 @@
               "required": ["isEnabled", "pathname", "robots"]
             }
           },
-          "required": ["isEnabled", "postsPerPage", "post", "list", "category", "tag"]
+          "required": ["isEnabled", "postsPerPage", "post", "list", "category", "tag", "author"]
         }
       },
       "required": ["blog"]

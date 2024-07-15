@@ -1,0 +1,61 @@
+---
+import { getEntry } from 'astro:content';
+
+import Image from '~/components/common/Image.astro';
+
+const { authorSlug } = Astro.props;
+
+const authorProfile = await getEntry('author', cleanSlug(authorSlug));
+
+import { cleanSlug } from '~/utils/permalinks';
+---
+
+<style>
+  .author-byline {
+    @apply flex flex-col items-center mt-8 p-4 bg-white dark:bg-slate-800 rounded-lg shadow-lg sm:flex-row sm:items-start sm:text-left;
+  }
+  .author-image {
+    @apply w-full max-w-xs rounded-md mb-4 sm:w-36 sm:h-36 sm:mb-0 sm:mr-6;
+  }
+  .author-details {
+    @apply flex flex-col items-center sm:items-start;
+  }
+  .author-name {
+    @apply text-2xl font-bold text-primary dark:text-accent;
+  }
+  .author-title {
+    @apply text-lg text-gray-500 dark:text-gray-400;
+  }
+  .author-bio {
+    @apply mt-2 text-gray-700 dark:text-gray-300 text-center sm:text-left;
+  }
+  .author-links {
+    @apply mt-4 flex space-x-4 justify-center sm:justify-start;
+  }
+  .author-links a {
+    @apply text-blue-500 dark:text-blue-400 hover:underline;
+  }
+</style>
+
+<div class='author-byline'>
+  <Image
+    src={authorProfile?.data.image}
+    class='author-image'
+    alt={authorProfile?.data.name}
+    width={140}
+    height={140}
+    loading='lazy'
+    decoding='async'
+  />
+  <div class='author-details'>
+    <h3 class='author-name'>{authorProfile?.data.name}</h3>
+    <p class='author-title'>{authorProfile?.data.title}</p>
+    <p class='author-bio'>{authorProfile?.data.bio}</p>
+    <div class='author-links'>
+      <a href={authorProfile?.data.authorPage}>Author Page</a>
+      {authorProfile?.data.twitter && <a href={authorProfile?.data.twitter}>Twitter</a>}
+      {authorProfile?.data.linkedin && <a href={authorProfile?.data.linkedin}>LinkedIn</a>}
+      {authorProfile?.data.github && <a href={authorProfile?.data.github}>GitHub</a>}
+    </div>
+  </div>
+</div>

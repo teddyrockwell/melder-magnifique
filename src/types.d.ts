@@ -46,6 +46,17 @@ export interface Post {
   /**  */
   headings?: Heading[]; // Add this line to include the headings property
 }
+// src/types.ts
+export interface Author {
+  name: string;
+  title?: string;
+  bio?: string;
+  authorPage?: string;
+  image?: string;
+  twitter?: string;
+  linkedin?: string;
+  github?: string;
+}
 export interface Heading {
   depth: number;
   value: string;

@@ -3,7 +3,15 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { Post, Heading } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
-import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
+import {
+  cleanSlug,
+  trimSlash,
+  BLOG_BASE,
+  POST_PERMALINK_PATTERN,
+  CATEGORY_BASE,
+  TAG_BASE,
+  AUTHOR_BASE,
+} from './permalinks';
 
 const generatePermalink = async ({
   id,
@@ -137,6 +145,10 @@ export const blogCategoryRobots = APP_BLOG.category.robots;
 export const blogTagRobots = APP_BLOG.tag.robots;
 
 export const blogPostsPerPage = APP_BLOG?.postsPerPage;
+
+/* Authors inclusion*/
+export const authorListRobots = APP_BLOG.author.robots;
+export const isAuthorRouteEnabled = APP_BLOG.author.isEnabled;
 
 /** */
 export const fetchPosts = async (): Promise<Array<Post>> => {
@@ -332,3 +344,70 @@ export async function getRelatedPosts(originalPost: Post, maxResults: number = 4
 
   return selectedPosts;
 }
+
+/* AUTHOR COLLECTION FUNCTIONS */
+
+// export const getStaticPathsAuthorList = async ({ paginate }: { paginate: PaginateFunction }) => {
+//   if (!isBlogEnabled || !isAuthorRouteEnabled) return [];
+//   return paginate(await fetchPosts(), {
+//     params: { blog: AUTHOR_BASE || undefined },
+//     pageSize: blogPostsPerPage,
+//   });
+// };
+
+// export const getStaticPathsAuthorList = async ({ paginate }: { paginate: PaginateFunction }) => {
+//   if (!isBlogEnabled || !isAuthorRouteEnabled) return [];
+
+//   const posts = await fetchPosts();
+//   const authors: Record<string, { name: string; count: number }> = {};
+
+//   // Extract and count posts for each author
+//   posts.forEach((post) => {
+//     if (post.author) {
+//       const authorName = post.author;
+//       if (!authors[authorName]) {
+//         authors[authorName] = { name: authorName, count: 0 };
+//       }
+//       authors[authorName].count += 1;
+//     }
+//   });
+
+//   // Generate paginated paths for each author
+//   return Object.keys(authors).flatMap((authorName) =>
+//     paginate(
+//       posts.filter((post) => post.author === authorName),
+//       {
+//         params: { author: authorName, blog: AUTHOR_BASE || undefined },
+//         pageSize: blogPostsPerPage,
+//         props: { author: { name: authorName, count: authors[authorName].count } },
+//       }
+//     )
+//   );
+// };
+
+export const getStaticPathsAuthorList = async ({ paginate }: { paginate: PaginateFunction }) => {
+  if (!isBlogEnabled || !isAuthorRouteEnabled) return [];
+
+  const posts = await fetchPosts();
+  const authors: Record<string, string> = {};
+
+  posts.map((post) => {
+    if (post.author) {
+      const authorSlug = cleanSlug(post.author);
+      if (!authors[authorSlug]) {
+        authors[authorSlug] = post.author;
+      }
+    }
+  });
+
+  return Array.from(Object.keys(authors)).flatMap((authorSlug) =>
+    paginate(
+      posts.filter((post) => post.author && cleanSlug(post.author) === authorSlug),
+      {
+        params: { author: authorSlug, blog: AUTHOR_BASE || undefined },
+        pageSize: blogPostsPerPage,
+        props: { author: authors[authorSlug] },
+      }
+    )
+  );
+};

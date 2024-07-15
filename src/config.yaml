@@ -37,6 +37,12 @@ apps:
     isEnabled: true
     postsPerPage: 10
 
+    author:
+      isEnabled: true
+      pathname: 'author' # authors main path /authors/some-authors, you can change this to "group" (/group/some-authors)
+      robots:
+        index: true
+
     post:
       isEnabled: true
       permalink: '/blog/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%

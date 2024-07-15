@@ -130,9 +130,17 @@ const getI18N = (config: Config) => {
 const getAppBlog = (config: Config) => {
   const _default = {
     isEnabled: false,
-    postsPerPage: 6,
+    postsPerPage: 10,
     isRelatedPostsEnabled: false,
     relatedPostsCount: 4,
+    authors: {
+      isEnabled: true,
+      permalink: 'authors',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
     post: {
       isEnabled: true,
       permalink: '/blog/%slug%',

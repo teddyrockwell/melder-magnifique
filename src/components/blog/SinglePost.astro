@@ -1,5 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { getEntry } from 'astro:content';
+import { cleanSlug } from '~/utils/permalinks';
 
 import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
@@ -13,19 +15,24 @@ import type { Post } from '~/types';
 import TableOfContents from './TableOfContents.astro';
 import TagList from './TagList.astro';
 import CategoryList from './CategoryList.astro';
+import AuthorByline from './AuthorByline.astro';
 export interface Props {
   post: Post;
   url: string | URL;
 }
 
+// const authorsList = await getCollection('author'); // equals array of objects for authors.
+
 const { post, url } = Astro.props;
+const correctAuthor = await getEntry('author', cleanSlug(post.author));
+// console.log(correctAuthor);
 ---
 
 <section class='py-8 sm:py-16 lg:py-20 mx-auto'>
   <article>
     <header class={post.image ? '' : ''}>
       <div class='flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center'>
-        <p>
+        <p class='tracking-wider'>
           <Icon name='tabler:clock' class='w-4 h-4 inline-block -mt-0.5 dark:text-gray-400' />
           <time datetime={String(post.publishDate)} class='inline-block'>{getFormattedDate(post.publishDate)}</time>
           {
@@ -112,5 +119,12 @@ const { post, url } = Astro.props;
       <PostTags tags={post.tags?.sort((a, b) => a.title.localeCompare(b.title))} class='mr-5 rtl:mr-0 rtl:ml-5' />
       <SocialShare url={url} text={post.title} class='mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600' />
     </div>
+    {
+      correctAuthor?.slug && (
+        <div class='mx-auto px-6 sm:px-6 max-w-3xl mt-8'>
+          <AuthorByline authorSlug={correctAuthor?.slug} />
+        </div>
+      )
+    }
   </article>
 </section>

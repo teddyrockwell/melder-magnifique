@@ -1,5 +1,6 @@
 ---
 publishDate: 2023-08-06T00:00:00Z
+author: Teddy Rockwell
 title: Customization is key!
 excerpt: Our guide unlocks seamless customization steps for a unique online presence.
 image: '~/assets/images/tech-unsplash.jpeg'

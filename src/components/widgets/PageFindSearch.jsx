@@ -1,43 +1,43 @@
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
 
-const PageFindSearch = () => {
-  useEffect(() => {
-    const initializePagefind = () => {
-      if (!document.querySelector('#search input')) {
-        new PagefindUI({
-          element: '#search',
-          highlightParam: 'highlight',
-          showSubResults: true,
-          pageSize: 5,
-          translations: {
-            placeholder: 'Search',
-            zero_results: 'No results related to [SEARCH_TERM].',
-          },
-          ranking: {
-            pageLength: 0.5,
-            termSimilarity: 0.75,
-            termFrequency: 0.5,
-          },
-        });
+// const PageFindSearch = () => {
+//   useEffect(() => {
+//     const initializePagefind = () => {
+//       if (!document.querySelector('#search input')) {
+//         new PagefindUI({
+//           element: '#search',
+//           highlightParam: 'highlight',
+//           showSubResults: true,
+//           pageSize: 5,
+//           translations: {
+//             placeholder: 'Search',
+//             zero_results: 'No results related to [SEARCH_TERM].',
+//           },
+//           ranking: {
+//             pageLength: 0.5,
+//             termSimilarity: 0.75,
+//             termFrequency: 0.5,
+//           },
+//         });
 
-        window.addEventListener('keydown', (event) => {
-          if (event.key === '/' || event.key === '.') {
-            event.preventDefault();
-            document.querySelector('div#search input').focus();
-          }
-        });
-      }
-    };
+//         window.addEventListener('keydown', (event) => {
+//           if (event.key === '/' || event.key === '.') {
+//             event.preventDefault();
+//             document.querySelector('div#search input').focus();
+//           }
+//         });
+//       }
+//     };
 
-    document.addEventListener('astro:page-load', initializePagefind);
-    initializePagefind();
+//     document.addEventListener('astro:page-load', initializePagefind);
+//     initializePagefind();
 
-    return () => {
-      document.removeEventListener('astro:page-load', initializePagefind);
-    };
-  }, []);
+//     return () => {
+//       document.removeEventListener('astro:page-load', initializePagefind);
+//     };
+//   }, []);
 
-  return <div id="search" className="py-8 -mt-8"></div>;
-};
+//   return <div id="search" className="py-8 -mt-8"></div>;
+// };
 
-export default PageFindSearch;
+// export default PageFindSearch;
