@@ -17,6 +17,16 @@ module.exports = {
         serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
         heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
       },
+      backgroundImage: (theme) => ({
+        'image-default': "url('~/assets/images/brand/ICON_TRANSPARENT_BLACK.png')",
+        'image-dark': "url('~/assets/images/brand/ICON_TRANSPARENT_WHITE.png')",
+        'image-hover': "url('~/assets/images/brand/ICON_TRANSPARENT_GOLD.png')",
+      }),
+    },
+  },
+  variants: {
+    extend: {
+      backgroundImage: ['dark', 'hover'],
     },
   },
   plugins: [typographyPlugin],
